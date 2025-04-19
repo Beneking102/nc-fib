@@ -1,0 +1,90 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Theme variables */
+:root {
+  --color-text: #DFBE5D;
+  --color-bg: #151515;
+  --color-neon: #AC9247;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", serif;
+  scroll-behavior: smooth;
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-text) var(--color-bg);
+}
+
+html,
+body {
+  overflow-x: hidden;
+  background: var(--color-bg);
+  scroll-behavior: smooth !important;
+}
+
+@keyframes blob {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
+}
+
+.animate-blob {
+  animation: blob 8s infinite;
+}
+
+.animation-delay-2000 { animation-delay: 2s; }
+.animation-delay-4000 { animation-delay: 4s; }
+
+/* Custom Scrollbar Styles */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+  background-color: transparent;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-bg)CC;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid var(--color-text)1A;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-text)4D;
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border-radius: 20px;
+  border: 1px solid var(--color-text)1A;
+  box-shadow:
+    inset 0 0 20px var(--color-neon)33,
+    0 0 10px var(--color-neon)1A;
+  transition: all 0.3s ease;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-text)80;
+  border: 1px solid var(--color-neon)33;
+  box-shadow:
+    inset 0 0 30px var(--color-neon)4D,
+    0 0 15px var(--color-neon)33;
+}
+::-webkit-scrollbar-thumb:active {
+  background: var(--color-text)99;
+  border: 1px solid var(--color-neon)4D;
+  box-shadow:
+    inset 0 0 40px var(--color-neon)66,
+    0 0 20px var(--color-neon)4D;
+}
+::-webkit-scrollbar-corner { background: transparent; }
+
+/* AOS performance hint */
+[data-aos] { will-change: transform, opacity !important; }
+
+@keyframes shine {
+  from { left: -100%; }
+  to   { left: 200%; }
+}
+.animate-shine {
+  animation: shine 1.5s ease-in-out infinite;
+}
