@@ -10,8 +10,8 @@ export interface Leader { id: string;  image: string; }
 
 export const leaders: Leader[] = [
   { id: 'FIB-01',  image: '/fib-01.png' },
-  { id: 'FIB-02',  image: '/fib-02.png' },
-  { id: 'FIB-03', image: '/fib-03.png' },
+  { id: 'FIB-02',  image: '/fib-03.png' },
+  { id: 'FIB-03', image: '/Photo.png' },
 ];
 
 const Leadership = () => (
